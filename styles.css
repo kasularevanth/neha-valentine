@@ -1,6 +1,12 @@
 /* ===== Config: name is set via LVR_NAME in script.js ===== */
 :root {
-  --bg: linear-gradient(135deg, #ffe4ec 0%, #ffd1dc 30%, #f8b4d9 70%, #fce4ec 100%);
+  --bg: linear-gradient(
+    135deg,
+    #ffe4ec 0%,
+    #ffd1dc 30%,
+    #f8b4d9 70%,
+    #fce4ec 100%
+  );
   --card-bg: #fff;
   --card-shadow: 0 20px 60px rgba(255, 105, 180, 0.25);
   --pink: #e91e8c;
@@ -8,7 +14,7 @@
   --pink-dark: #c2185b;
   --text: #2d1b2e;
   --no-color: #b0a0a0;
-  --font: 'Quicksand', sans-serif;
+  --font: "Quicksand", sans-serif;
 }
 
 * {
@@ -32,10 +38,126 @@ body {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background-image:
-    radial-gradient(circle at 20% 30%, rgba(255, 182, 193, 0.4) 0%, transparent 50%),
-    radial-gradient(circle at 80% 70%, rgba(255, 105, 180, 0.2) 0%, transparent 50%);
+  background-image: radial-gradient(
+      circle at 20% 30%,
+      rgba(255, 182, 193, 0.4) 0%,
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 80% 70%,
+      rgba(255, 105, 180, 0.2) 0%,
+      transparent 50%
+    );
   z-index: 0;
+  animation: bg-glow 8s ease-in-out infinite;
+}
+
+@keyframes bg-glow {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+.bg-float {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.float-heart {
+  position: absolute;
+  bottom: -1rem;
+  font-size: 1.85rem;
+  opacity: 0.35;
+  color: var(--pink);
+  animation: float-up 15s linear infinite;
+}
+
+.float-heart:nth-child(1) {
+  left: 5%;
+  animation-delay: 0s;
+  animation-duration: 14s;
+}
+.float-heart:nth-child(2) {
+  left: 18%;
+  animation-delay: 2s;
+  animation-duration: 16s;
+}
+.float-heart:nth-child(3) {
+  left: 32%;
+  animation-delay: 4s;
+  animation-duration: 13s;
+}
+.float-heart:nth-child(4) {
+  left: 48%;
+  animation-delay: 1s;
+  animation-duration: 17s;
+  font-size: 1.5rem;
+}
+.float-heart:nth-child(5) {
+  left: 62%;
+  animation-delay: 3s;
+  animation-duration: 15s;
+}
+.float-heart:nth-child(6) {
+  left: 78%;
+  animation-delay: 5s;
+  animation-duration: 14s;
+  font-size: 2.1rem;
+}
+.float-heart:nth-child(7) {
+  left: 88%;
+  animation-delay: 0.5s;
+  animation-duration: 18s;
+}
+.float-heart:nth-child(8) {
+  left: 12%;
+  animation-delay: 2.5s;
+  animation-duration: 12s;
+}
+.float-heart:nth-child(9) {
+  left: 42%;
+  animation-delay: 4.5s;
+  animation-duration: 16s;
+}
+.float-heart:nth-child(10) {
+  left: 68%;
+  animation-delay: 1.5s;
+  animation-duration: 13s;
+}
+.float-heart:nth-child(11) {
+  left: 92%;
+  animation-delay: 3.5s;
+  animation-duration: 15s;
+}
+.float-heart:nth-child(12) {
+  left: 25%;
+  animation-delay: 5.5s;
+  animation-duration: 14s;
+  font-size: 1.5rem;
+}
+
+@keyframes float-up {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(0.8);
+    opacity: 0;
+  }
+  8% {
+    opacity: 0.4;
+  }
+  92% {
+    opacity: 0.25;
+  }
+  100% {
+    transform: translateY(-110vh) rotate(360deg) scale(1);
+    opacity: 0;
+  }
 }
 
 .container {
@@ -63,79 +185,43 @@ body {
   transform: scale(0.95);
 }
 
-/* ----- Cute character ----- */
+/* ----- Character image ----- */
 .character {
   margin-bottom: 1rem;
+  text-align: center;
 }
 
-.face {
-  width: 80px;
-  height: 80px;
-  background: linear-gradient(145deg, #ffb347, #ff8c42);
-  border-radius: 50%;
+.character-img {
+  display: block;
   margin: 0 auto;
-  position: relative;
-  box-shadow: 0 6px 20px rgba(255, 140, 66, 0.4);
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 16px rgba(255, 140, 66, 0.35));
+  animation: character-float 2.8s ease-in-out infinite;
 }
 
-.ear {
-  position: absolute;
-  width: 24px;
-  height: 28px;
-  background: linear-gradient(145deg, #ffb347, #ff8c42);
-  border-radius: 50% 50% 0 0;
-  top: -12px;
+@keyframes character-float {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-4px) scale(1.02); }
 }
 
-.ear-left {
-  left: -4px;
-  transform: rotate(-25deg);
+/* ----- Emoji above text ----- */
+.emoji-above {
+  font-size: 2.8rem;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  animation: emoji-float 2.5s ease-in-out infinite;
 }
 
-.ear-right {
-  right: -4px;
-  transform: rotate(25deg);
-}
-
-.ear-right .heart {
-  position: absolute;
-  top: -2px;
-  right: -4px;
-  font-size: 14px;
-  color: var(--pink);
-  animation: heart-pulse 1.2s ease-in-out infinite;
-}
-
-@keyframes heart-pulse {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.15); }
-}
-
-.eyes {
-  position: absolute;
-  top: 32px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 22px;
-}
-
-.eye {
-  width: 10px;
-  height: 10px;
-  background: #2d1b2e;
-  border-radius: 50%;
-}
-
-.nose {
-  position: absolute;
-  bottom: 22px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 8px;
-  height: 8px;
-  background: var(--pink-light);
-  border-radius: 50%;
+@keyframes emoji-float {
+  0%,
+  100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-6px) scale(1.08);
+  }
 }
 
 /* ----- Question ----- */
@@ -154,12 +240,14 @@ body {
 /* ----- Buttons ----- */
 .buttons-wrap {
   position: relative;
-  min-height: 120px;
+  min-height: 80px;
+  width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
 .btn {
@@ -167,52 +255,47 @@ body {
   cursor: pointer;
   font-family: var(--font);
   font-weight: 600;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn-yes {
   background: linear-gradient(145deg, var(--pink), var(--pink-dark));
   color: #fff;
-  font-size: 1.25rem;
-  padding: 0.85rem 2.5rem;
+  font-size: 1.05rem;
+  padding: 0.65rem 1.75rem;
   border-radius: 999px;
   box-shadow: 0 8px 24px rgba(233, 30, 140, 0.4);
   z-index: 2;
 }
 
-.btn-yes:hover {
-  transform: scale(1.05);
-  box-shadow: 0 10px 28px rgba(233, 30, 140, 0.5);
-}
-
-.btn-yes.big {
-  transform: scale(1.2);
-  font-size: 1.45rem;
-  padding: 1rem 3rem;
-  box-shadow: 0 12px 32px rgba(233, 30, 140, 0.45);
-}
+/* Yes button never moves or changes size */
 
 .btn-no {
-  position: absolute;
-  background: transparent;
-  color: var(--no-color);
-  font-size: 0.95rem;
-  padding: 0.4rem 0.8rem;
-  border-radius: 8px;
+  position: relative;
+  background: #fff;
+  color: var(--text);
+  font-size: 1.05rem;
+  padding: 0.65rem 1.75rem;
+  border-radius: 999px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.06);
   user-select: none;
   pointer-events: none;
   z-index: 1;
+  /* Shape never changes; only its container (no-wrap) moves */
 }
 
 .no-wrap {
-  position: absolute;
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   pointer-events: none;
-  left: 50%;
-  top: 60%;
-  transform: translate(-50%, -50%);
+  transition: left 0.01s ease-out, top 0.01s ease-out;
+}
+
+.buttons-wrap.evasive .no-wrap {
+  position: absolute;
+  /* left/top set by JS so No can move anywhere in the card */
 }
 
 .no-hint {
@@ -262,7 +345,8 @@ body {
 .celebration .sparkle-text {
   font-size: 1.2rem;
   color: var(--pink);
-  animation: pop-in 0.5s 0.4s ease forwards, sparkle-shine 1.5s 1s ease-in-out infinite;
+  animation: pop-in 0.5s 0.4s ease forwards,
+    sparkle-shine 1.5s 1s ease-in-out infinite;
   opacity: 0;
   animation-fill-mode: forwards;
 }
@@ -279,8 +363,13 @@ body {
 }
 
 @keyframes sparkle-shine {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.7; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
 }
 
 .confetti-wrap {
@@ -318,7 +407,8 @@ body {
 }
 
 @keyframes sparkle-float {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
     transform: scale(1) rotate(0deg);
   }

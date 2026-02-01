@@ -1,55 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Will you be my Valentine?</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
-</head>
-<body>
-  <div class="bg-hearts" aria-hidden="true"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Will you be my Valentine?</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="bg-hearts" aria-hidden="true"></div>
+    <div class="bg-float" aria-hidden="true">
+      <span class="float-heart">♥</span>
+      <span class="float-heart">♥</span>
+      <span class="float-heart">♥</span>
+      <span class="float-heart">💕</span>
+      <span class="float-heart">♥</span>
+      <span class="float-heart">💗</span>
+      <span class="float-heart">♥</span>
+      <span class="float-heart">💕</span>
+      <span class="float-heart">♥</span>
+      <span class="float-heart">💗</span>
+      <span class="float-heart">♥</span>
+      <span class="float-heart">💕</span>
+    </div>
 
-  <main class="container">
-    <section class="card" id="proposal-card">
-      <div class="character">
-        <div class="face">
-          <div class="ear ear-left"></div>
-          <div class="ear ear-right">
-            <span class="heart">♥</span>
-          </div>
-          <div class="eyes">
-            <span class="eye"></span>
-            <span class="eye"></span>
-          </div>
-          <div class="nose"></div>
+    <main class="container">
+      <section class="card" id="proposal-card">
+        <div class="character">
+          <img
+            src="https://media.istockphoto.com/id/636379014/photo/hands-forming-a-heart-shape-with-sunset-silhouette.jpg?s=612x612&w=0&k=20&c=CgjWWGEasjgwia2VT7ufXa10azba2HXmUDe96wZG8F0="
+            alt=""
+            class="character-img"
+          />
         </div>
-      </div>
-      <h1 class="question">
-        <span id="lvr-name">Neha</span> will you be my valentine?
-      </h1>
-      <div class="buttons-wrap">
-        <button type="button" class="btn btn-yes" id="btn-yes">Yes</button>
-        <div class="no-wrap">
-          <button type="button" class="btn btn-no" id="btn-no">No</button>
-          <p class="no-hint">"No" seems a bit shy 😼</p>
+        <div class="emoji-above" aria-hidden="true">💖</div>
+        <h1 class="question">
+          <span id="lvr-name">Neha</span> will you be my valentine?
+        </h1>
+        <div class="buttons-wrap">
+          <button type="button" class="btn btn-yes" id="btn-yes">Yes</button>
+          <div class="no-wrap">
+            <button type="button" class="btn btn-no" id="btn-no">No😏</button>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <section class="celebration hidden" id="celebration">
-      <div class="celebration-inner">
-        <p class="yay">Yay!</p>
-        <p class="congrats">Congratulations!</p>
-        <p class="sparkle-text">✨ You said yes! ✨</p>
-        <div class="confetti-wrap" id="confetti-wrap"></div>
-        <div class="sparkles" id="sparkles"></div>
-      </div>
-    </section>
-  </main>
+      <section class="celebration hidden" id="celebration">
+        <div class="celebration-inner">
+          <p class="yay">Yay!</p>
+          <p class="congrats">Congratulations!</p>
+          <p class="sparkle-text">✨ You said yes! ✨</p>
+          <div class="confetti-wrap" id="confetti-wrap"></div>
+          <div class="sparkles" id="sparkles"></div>
+        </div>
+      </section>
+    </main>
 
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
